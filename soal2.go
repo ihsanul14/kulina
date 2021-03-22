@@ -58,16 +58,14 @@ func Step() string {
 }
 
 func Valley(prev int, next int) int {
-	fmt.Println(prev, next)
 	res := 0
-	if next < 0 && !(prev < 0 && next < 0) {
+	if next == 0 && prev < 0 {
 		res += 1
 	}
 	return res
 }
 
 func Mountain(prev int, next int) int {
-	fmt.Println(prev, next)
 	res := 0
 	if next == 0 && prev > 0 {
 		res += 1
