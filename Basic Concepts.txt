@@ -1,0 +1,19 @@
+1. Coding
+   A. Give an example of code smell (1) that usually happened in OOP. Explain and
+      give the preventive action
+	- ketika mendefinisikan sebuah koneksi ke database pada beberapa object yang juga mengakses database yang sama. Misalnya ada object A dan object B yang
+	memiliki kegunaan yang berbeda akan tetapi kedua service ini menggunakan database yang sama untuk penyimpanan data. code smell terjadi ketika object A
+	mendefinisikan koneksi ke db dan object juga demikian. Code smell ini dapat dicegah dengan membuat suatu object baru (object C) yang berfungsi sebagai koneksi ke db
+	sehingga object A dan object B cukup menginstansiasi dari object C tersebut 
+   B. Explain briefly about Dependency Injection, and why is it important ?
+	- Dependency injection merupakan penggunaan suatu class yang bisa digunakan untuk semua class. Hal ini berguna untuk menyederhanakan kode dan mencegah code smell
+
+2. Rest API
+  A. Give 1 example each, of what do’s and don’ts when you handle request while
+     using these method :
+     ● POST
+	- Do    : menentukan jenis data yang dikirimkan, jika bersifat confidential maka sebaiknya menggunakan POST
+	- Don't : menggunakan format json karena payloadnya dapat dibaca, sebaiknya menggunakan format x-www-form-urlencoded agar tidak dapat dibaca payloadnya
+     ● GET
+	- Do    : 
+	- Don't : request dapat di bookmarked sehingga jangan memakai method GET untuk mendapatkan data yang bersifat confidential
